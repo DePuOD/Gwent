@@ -9,4 +9,10 @@ namespace Data
     class DataAbstract
     {
     }
+
+    public interface ICard { 
+        int Value { get; set; }
+        int Row { get; set; }
+        String Type { get; set; }
+    }
 }
