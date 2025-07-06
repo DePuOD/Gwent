@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:PresentationView"
         mc:Ignorable="d"
         Title="MainWindow"
-        WindowState="Maximized"
         ResizeMode="NoResize"
         WindowStyle="None" d:DesignHeight="1080" d:DesignWidth="1920"
         >

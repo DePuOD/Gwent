@@ -4,11 +4,50 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PresentationView"
+      xmlns:vm="clr-namespace:PresentationViewModel;assembly=PresentationViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="GamePage">
-
+    <Page.DataContext>
+        <vm:ViewModel />
+    </Page.DataContext>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Rectangle Width="1000" Grid.Row="0" Fill="Brown" Stroke="Black" StrokeThickness="1"/>
+        <Rectangle Width="1000" Grid.Row="1" Fill="Brown" Stroke="Black" StrokeThickness="1"/>
+        <Rectangle Width="1000" Grid.Row="2" Fill="Brown" Stroke="Black" StrokeThickness="1"/>
+        <Rectangle Width="1000" Grid.Row="3" Fill="Brown" Stroke="Black" StrokeThickness="1"/>
+        <Rectangle Width="1000" Grid.Row="3" Fill="Brown" Stroke="Black" StrokeThickness="1"/>
+        <Rectangle Width="1000" Grid.Row="4" Fill="Brown" Stroke="Black" StrokeThickness="1"/>
+        <Rectangle Width="1000" Grid.Row="5" Fill="Brown" Stroke="Black" StrokeThickness="1"/>
+        <ItemsControl Width="1000" Grid.Row="6" ItemsSource="{Binding Player.Hand}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="100" Height="100">
+                        <Rectangle Fill="Red" Stroke="Black" />
+                        <TextBlock Text="{Binding Strength}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="White"
+                   FontWeight="Bold" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </Grid>
 </Page>

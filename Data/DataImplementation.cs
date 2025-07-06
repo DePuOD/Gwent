@@ -1,7 +1,8 @@
 ﻿namespace Data
 {
-    public class DataImplementation
+    internal class DataImplementation : DataAbstract
     {
 
+        public DataImplementation() { }
     }
 }
